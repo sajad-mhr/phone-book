@@ -1,0 +1,419 @@
+:root {
+  --color-1: #eff5f5;
+  --color-2: #d6e4e5;
+  --color-3: #497174;
+  --color-4: #eb6440;
+  --color-1-dark: #393e46;
+  --color-2-dark: #313335;
+  --color-3-dark: #16393b;
+  --color-4-dark: #993304;
+}
+
+@font-face {
+  font-family: vazir;
+  src: url("../assets/fonts/Vazir.ttf");
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-1);
+  width: 100%;
+}
+
+* {
+  font-family: vazir;
+}
+
+.header {
+  background-color: var(--color-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  z-index: 1;
+}
+
+.fixed {
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(65, 65, 65);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(32, 32, 32);
+}
+
+.header-left {
+  margin-left: 20px;
+}
+.header-right {
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.header-left i {
+  font-size: 25px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+.header-left i:hover {
+  background-color: var(--color-2);
+}
+
+.drawer {
+  background-color: var(--color-1);
+  color: #fff;
+  width: 100%;
+  max-width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transition: 0.4s;
+  transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+
+.hidden {
+  transform: translateX(-100%);
+}
+.menu-up {
+}
+.menu-up i {
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 25px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+}
+
+.menu-up i:hover {
+  background-color: var(--color-2);
+}
+
+.menu-contaier {
+  direction: rtl;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 10px;
+  margin-top: 5px;
+  transition: 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-item i {
+  font-size: 20px;
+}
+.menu-item p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.menu-item:hover {
+  background-color: var(--color-2);
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+}
+
+.overley {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  z-index: 2;
+}
+
+.contacts-container {
+  direction: rtl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-card {
+  background-color: var(--color-1);
+  display: flex;
+  padding: 10px 0 10px 0;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 90%;
+  margin-top: 10px;
+}
+.contact-card:last-of-type {
+  margin-bottom: 15px;
+}
+
+.contact-details {
+  line-height: 30px;
+}
+.contact-details p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.right-card {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  background-color: var(--color-3);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  margin: 0 10px 0 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.left-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.left-card a {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  font-size: 17px;
+  margin-right: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.left-card a:hover {
+  background-color: #367e18;
+  color: #fff;
+}
+.left-card a[id="delete"]:hover {
+  background-color: #cc3636;
+  color: #fff;
+}
+.left-card a[id="edit"]:hover {
+  background-color: var(--color-1-dark);
+  color: #fff;
+}
+
+.modal-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: var(--color-1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  height: 320px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+}
+
+.modal-header {
+  padding: 15px;
+  display: flex;
+  align-items: flex-start;
+  width: 90%;
+}
+.modal-header i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-hidden {
+  display: none;
+}
+
+.modal-input {
+  margin-top: 10px;
+  width: 90%;
+  height: 35px;
+  outline: none;
+  padding-right: 5px;
+}
+
+.modal-input:first-of-type{
+  margin-top: 0;
+}
+
+.error{
+  font-size: 13px;
+  display: flex;
+  align-self: flex-start;
+  margin-right: 17px;
+  color: #cc3636;
+  display: none;
+}
+
+.modal-btn {
+  width: 92%;
+  height: 35px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.empty-phone-book{
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+/* dark-style */
+.dark {
+  background-color: var(--color-2-dark);
+}
+
+.dark .header {
+  background-color: var(--color-2-dark);
+  color: var(--color-1);
+  
+}
+.dark .fixed{
+  border-bottom: 1px solid var(--color-1);
+}
+
+.dark .header-left i:hover {
+  background-color: var(--color-3);
+}
+
+.dark .contact-card {
+  background-color: var(--color-2-dark);
+  border: 1px solid var(--color-1);
+  color: var(--color-1);
+}
+
+.dark .left-card a[id="edit"]:hover {
+  background-color:var(--color-3);
+
+}
+
+.dark .left-card a {
+  color: var(--color-1);
+}
+
+.dark .drawer {
+  background-color: var(--color-2-dark);
+  color: var(--color-1);
+}
+
+.dark .menu-up i:hover {
+  background-color: var(--color-3);
+}
+
+.dark .menu-item:hover {
+  background-color: var(--color-3);
+  color: var(--color-1);
+}
+
+.dark .modal {
+  background-color: var(--color-2-dark);
+}
+
+.dark .modal-header {
+  color: var(--color-1);
+}
+
+.dark .modal-input {
+  background-color: transparent;
+  border: 1px solid var(--color-1);
+  color: var(--color-1);
+}
+.dark .modal-input::placeholder {
+  color: var(--color-1);
+}
+
+.dark .modal-btn {
+  background-color: var(--color-2-dark);
+  border: 1px solid var(--color-1);
+  color: var(--color-1);
+  transition: 0.5s ease;
+}
+.dark .modal-btn:hover {
+  background-color: var(--color-1-dark);
+}
+
+
+.dark::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.dark::-webkit-scrollbar-track {
+  background: var(--color-2-dark);
+}
+
+/* Handle */
+.dark::-webkit-scrollbar-thumb {
+  background: var(--color-1);
+}
+
+/* Handle on hover */
+.dark::-webkit-scrollbar-thumb:hover {
+  background: var(--color-2);
+}
+
+.dark .empty-phone-book{
+  color: var(--color-1);
+}

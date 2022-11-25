@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دفترچه تلفن</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- Drawer-Start -->
+    <div id="drawer" class="drawer hidden">
+      <div class="menu-up">
+        <i id="close-menu-btn" class="fa fa-close"></i>
+      </div>
+      <div class="menu-contaier">
+        <ul class="menu">
+          <li id="new-contact" class="menu-item">
+            <p>افزودن مخاطب جدید</p>
+            <i class="fa fa-add"></i>
+          </li>
+          <li id="switch-theme-btn" class="menu-item">
+            <p id="theme-title">حالت تاریک</p>
+            <i id="theme-icon" class="fa fa-moon"></i>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="overley" class="overley hidden"></div>
+    <!-- Drawer-End -->
+    
+    <!-- Modal-Start -->
+    <div class="modal-container modal-hidden" id="modal">
+      <div class="modal">
+        <div class="modal-header">
+          <i id="close-modal-btn" class="fa fa-close"></i>
+        </div>
+        <input
+          autocomplete="off"
+          placeholder="نام"
+          type="text"
+          id="first-name"
+          class="modal-input"
+        />
+        <span id="error-name" class="error">نام الزامی است</span>
+        <input
+        autocomplete="off"
+        placeholder="نام خانوادگی"
+        type="text"
+        id="last-name"
+        class="modal-input"
+        />
+        <span id="error-family" class="error">نام خانوادگی الزامی است</span>
+        <input
+        autocomplete="off"
+        placeholder="شماره همراه"
+        type="text"
+        id="phone-number"
+        class="modal-input"
+        maxlength="11"
+        />
+        <span id="error-phone-number" class="error"></span>
+        <button id="add-contact-btn" class="modal-btn">ذخیره</button>
+      </div>
+    </div>
+    <!-- Modal-End -->
+
+    <!-- ModalEdit-Start -->
+    <div class="modal-container modal-hidden" id="modal-edit">
+      <div class="modal">
+        <div class="modal-header">
+          <i id="close-edit-modal-btn" class="fa fa-close"></i>
+        </div>
+        <input
+          autocomplete="off"
+          placeholder="نام"
+          type="text"
+          id="edit-first-name"
+          class="modal-input"
+        />
+        <input
+        autocomplete="off"
+        placeholder="نام خانوادگی"
+        type="text"
+        id="edit-last-name"
+        class="modal-input"
+        />
+
+        <input
+        autocomplete="off"
+        placeholder="شماره همراه"
+        type="text"
+        id="edit-phone-number"
+        class="modal-input"
+        maxlength="11"
+        />
+        <button id="edit-add-contact-btn" class="modal-btn">ذخیره</button>
+        <span id="edit-error" class="error"></span>
+      </div>
+    </div>
+    <!-- ModalEdit-End -->
+
+    <header class="header">
+      <div class="header-left">
+        <i id="menu-btn" class="fa fa-bars"></i>
+      </div>
+      <div class="header-right">
+        <p>دفترچه تلفن</p>
+      </div>
+    </header>
+
+    <div id="empty-phone-book" class="empty-phone-book">
+      <h1>دفترچه تلفن خالی است</h1>
+    </div>
+    <div class="contacts-container">
+      <!-- contacts -->
+    </div>
+  </body>
+</html>
